@@ -1,3 +1,6 @@
+/*
+ * Entrada de n numeros y conteo de cuantos de estos son multiplos de k
+ */
 #include <iostream>
 using namespace std;
 
