@@ -1,3 +1,6 @@
+/*
+ * Ordenamiento por insercion
+ */
 #include <iostream>
 using namespace std;
 
