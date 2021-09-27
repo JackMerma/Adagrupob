@@ -22,8 +22,8 @@ public class Ejercicio5{
 		int data[]=new int[cant];
 
 		//rangos
-		final int MIN=200;
-		final int RANGO=100;
+		final int MIN=1000;
+		final int RANGO=1000;
 
 		for(int i=MIN,u=0;u<cant;i+=RANGO,u++){
 			long nums[];
@@ -49,6 +49,7 @@ public class Ejercicio5{
 
 			end=System.nanoTime();
 			duration=(end-start)/1000000;//milisegundos
+			System.out.println("case #"+u+": "+duration);
 			data[u]=(int)duration;	
 		}
 		//creacion del grafico

@@ -1,4 +1,4 @@
-/*
+/* Clase para desarrollar Ejercicio 5 (graficador)
  * codigo fuente: https://www.codespeedy.com/plot-graph-in-java/
  */
 import java.awt.*;
