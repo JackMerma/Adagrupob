@@ -22,8 +22,8 @@ public class Ejercicio5{
 		int data[]=new int[cant];
 
 		//rangos
-		final int MIN=100;
-		final int RANGO=50;
+		final int MIN=200;
+		final int RANGO=100;
 
 		for(int i=MIN,u=0;u<cant;i+=RANGO,u++){
 			long nums[];
