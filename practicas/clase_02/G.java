@@ -1,9 +1,16 @@
+/*
+ * codigo fuente: https://www.codespeedy.com/plot-graph-in-java/
+ */
 import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
 public class G extends JPanel{
-	int[] coordinates={100,20,1,2,3,4};
+	int[] coordinates;
 	int mar=50;
+
+	public G(int data[]){
+		coordinates=data;
+	}
 	protected void paintComponent(Graphics g){
 		super.paintComponent(g);
 		Graphics2D g1=(Graphics2D)g;
@@ -15,6 +22,7 @@ public class G extends JPanel{
 		double x=(double)(width-2*mar)/(coordinates.length-1);
 		double scale=(double)(height-2*mar)/getMax();
 		g1.setPaint(Color.BLUE);
+		//graficando puntos
 		for(int i=0;i<coordinates.length;i++){
 			double x1=mar+i*x;
 			double y1=height-mar-scale*coordinates[i];
@@ -29,13 +37,4 @@ public class G extends JPanel{
 
 		}return max;
 	}       
-
-	public static void main(String args[]){
-		JFrame frame =new JFrame();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(new G());
-		frame.setSize(400,400);
-		frame.setLocation(200,200);
-		frame.setVisible(true);
-	}
 }
