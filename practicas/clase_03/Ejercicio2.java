@@ -34,14 +34,26 @@ public class Ejercicio2{
 
 			//datos aleatorios ordenados de 10 en 10. Cantidad=len
 			//Ejemplo: len=100, entonces numeros aleatorios de 1 a 10000
-			for(int k=0,min=1;k<len;k++,min+=10)
-				nums[k]=(long)(Math.random()*(10))+min;
+			for(int k=0,minRango=1;k<len;k++,minRango+=10)
+				nums[k]=(long)(Math.random()*(10))+minRango;
 
 			int busq=(int)(Math.random()*(len*10))+1;//aleatorio a buscar de 1 a len*10
 			//captura de tiempo
 			start=System.nanoTime();
-			//algoritmo
 
+			//algoritmo
+			int min=0,max=len-1,pos;
+			while(min<=max){
+				pos=min+(max-min)/2;
+				if(arr[pos]==num)
+					break;
+
+				if(arr[pos]>num){
+					max=pos-1;
+				}else{
+					min=pos+1;
+				}
+			}
 
 			//captura de tiempo
 			end=System.nanoTime();
