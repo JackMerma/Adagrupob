@@ -14,6 +14,7 @@ int main(){
 	int num;
 	cin>>num;
 
+	//algoritmo
 	while(min<=max){
 		pos=min+(max-min)/2;
 		if(arr[pos]==num){
