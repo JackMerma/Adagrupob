@@ -22,8 +22,8 @@ public class Ejercicio2{
 		int data[]=new int[cant];//tiempos de ejecucion por caso
 
 		//cantidad de datos generados entre rango de 300 datos
-		final int MIN=100;
-		final int RANGO=300;
+		final int MIN=800;
+		final int RANGO=200;
 
 		//casos
 		for(int i=MIN,u=0;u<cant;i+=RANGO,u++){
@@ -33,7 +33,7 @@ public class Ejercicio2{
 			nums=new long[len];
 
 			//datos aleatorios ordenados de 10 en 10. Cantidad=len
-			//Ejemplo: len=100, entonces numeros aleatorios de 1 a 10000
+			//Ejemplo: len=100, entonces numeros ordenados y aleatorios de 1 a 1000
 			for(int k=0,minRango=1;k<len;k++,minRango+=10)
 				nums[k]=(long)(Math.random()*(10))+minRango;
 
@@ -45,10 +45,10 @@ public class Ejercicio2{
 			int min=0,max=len-1,pos;
 			while(min<=max){
 				pos=min+(max-min)/2;
-				if(arr[pos]==num)
+				if(nums[pos]==busq)
 					break;
 
-				if(arr[pos]>num){
+				if(nums[pos]>busq){
 					max=pos-1;
 				}else{
 					min=pos+1;
@@ -57,7 +57,7 @@ public class Ejercicio2{
 
 			//captura de tiempo
 			end=System.nanoTime();
-			duration=(end-start)/1000000;//milisegundos
+			duration=(end-start);//nanosegundos
 			data[u]=(int)duration;	
 		}
 		//creacion del grafico
