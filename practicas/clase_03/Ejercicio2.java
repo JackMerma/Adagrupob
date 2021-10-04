@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.awt.*;
 import javax.swing.*;
 /*
- *	Programa para graficar tiempo de ejecucion del algoritmo de bsuqueda binaria
+ *	Programa para graficar tiempo de ejecucion del algoritmo de busqueda binaria
  */
 public class Ejercicio2{
 	static JFrame frame=new JFrame();
@@ -21,7 +21,7 @@ public class Ejercicio2{
 		int cant=scan.nextInt();
 		int data[]=new int[cant];//tiempos de ejecucion por caso
 
-		//cantidad de datos generados entre rango de 300 datos
+		//cantidad de datos generados entre rango de 200 datos
 		final int MIN=800;
 		final int RANGO=200;
 
