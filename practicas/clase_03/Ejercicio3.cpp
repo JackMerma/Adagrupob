@@ -26,6 +26,8 @@ int main(){
 			cin>>b[i][j];
 
 	//agrupamiento
+	//arreglos que determinaran emparejamiento de a-iesimo con b-iesimo
+	//el arreglo 'pri' hace seguimiento de prioridad en A(reemplaza a una cola de prioridad)
 	int empA[len]={0},empB[len]={0}, pri[len]={0}, count=0;
 
 	for(int i=0;count<len;i++,i%=len){
