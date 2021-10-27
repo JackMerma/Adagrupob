@@ -1,11 +1,11 @@
 /** 
 * @author      : Jackson Fernando Merma Portocarrero (jmermap@unsa.edu.pe)
 * @created     : 27/10/2021
-* @filename    : question01_
+* @filename    : question02_
 * @description : Respondiendo a:
 *
-*      Q1: What is the time complexity of
-*      for (i = 0; i < n; i++) {
+*      Q2: What is the time complexity of
+*      for (i = n; i > 0; i--) {
 *        statement;
 *      }
 */
@@ -19,23 +19,23 @@ int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
-	int n;//casos
+	int n;
 	cin>>n;
 
 
 
 	//algoritmo
-	for(int i=0;i<n;i++){
+	for(int i=n;i>0;i--){
 		//statement
-		cout<<"hola!"<<endl;
+		cout<<"hoola!"<<endl;
 	}
 
 	/*
 	 * Complejidad del algoritmo --> lineal --> O(n)
 	 * 
-	 * Explicacion: Recorre un bucle 'n' veces --> rango: [0 a n-1] = [1 a n] = n veces
+	 * Explicacion: Recorre un bucle 'n' veces --> rango: [n a 1] = [1 a n] = n veces
 	 */
-	
+
 
 	return 0;
 }
