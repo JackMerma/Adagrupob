@@ -33,9 +33,9 @@ int main(){
 	}
 
 	/*
-	 * Complejidad del algoritmo --> lineal --> O(n^2)
+	 * Complejidad del algoritmo --> cuadratico --> O(n^2)
 	 * 
-	 * Explicacion: Recorre un bucle 'n^2' veces 
+	 * Explicacion: Recorre dos bucles 'n^2' veces 
 	 * 							--> rango: [0 a n-1]*[0 a n-1] = [1 a n]*[1 a n] = n*n = n^2 veces
 	 */
 
