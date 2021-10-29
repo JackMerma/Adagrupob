@@ -1,11 +1,11 @@
 /** 
 * @author      : Jackson Fernando Merma Portocarrero (jmermap@unsa.edu.pe)
 * @created     : 29/10/2021
-* @filename    : question07_
+* @filename    : question08_
 * @description : Respondiendo a:
 *
-*      Q7: What is the time complexity of
-*      for (i = 1; i < n; i = i*2) {
+*      Q8: What is the time complexity of
+*      for (i = n; i >= 1; i = i/2) {
 *        statement;
 *      }
 */
@@ -19,22 +19,20 @@ int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
-	int n, result=0;//result almacena la respuesta de un logaritmo en base 2
+	int n,result=0;//result almacena la respuesta de un logaritmo en base 2
 	cin>>n;
 
-
-	//algoritmo
-	for(int i=1;i<n;i*=2){
+	for(int i=n;i>=1;i/=2)
 		result++;
-	}
 
-	cout<<"log2("<<n<<")="<<result<<endl;
+	cout<<"log2("<<n<<")="<<result-1<<endl;//se le resta 1 por la verificacion del for (>=1) 
+
 
 	/*
-	 * Complejidad del algoritmo --> logaritmico --> log2(n)
+	 * Complejidad del algoritmo --> algoritmico --> O(log2(n))
+	 * 
 	 * Explicacion: Recorre un bucle log2(n) veces 
 	 * 							--> dado que el crecimiento es n, n/2, n/4, n/8, ... n/2^k
-	 * 							--> dado que el crecimiento es 1, 2, 4, 8, 16, ... 2^k
 	 * 							--> luego, si n es $n se recorre $m
 	 * 							    $n    -     $m
 	 * 							     2    -     1
@@ -47,6 +45,7 @@ int main(){
 	 * 							     2^k  -     log2(n)
 	 * 							--> entonces, si debe ser mayor o igual que 1, 'i' recorreria log2(n) veces
 	 */
+	
 
 	return 0;
 }
