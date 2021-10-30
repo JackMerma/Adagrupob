@@ -33,7 +33,6 @@ int main(){
 		p++;
 	}
 	p--;
-	cout<<p<<endl;
 	for(int i=1;i<=p;i*=2){
 		ans++;
 	}
