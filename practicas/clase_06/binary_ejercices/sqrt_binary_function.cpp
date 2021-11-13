@@ -2,7 +2,7 @@
 * @author      : Jackson Fernando Merma Portocarrero (jmermap@unsa.edu.pe)
 * @created     : 11/11/2021
 * @filename    : sqrt_binary_function
-* @description : _
+* @description : Programa que imprime la raiz de un numero cuadratico (entrada de datos)
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -15,13 +15,14 @@ using namespace std;
 
 int search_root(int number){
 	/**
-	 * Documentacion......
+	 * Metodo search_root: devuelve la raiz de un numero (si este la tiene), de lo contrario devuelve -1
+	 * Atributos:
+	 * 	number -> numero a sacarle la raiz
 	 */
 	float ans;
 	int a=0,b=number;
 
 	while(a<b-1){
-		cout<<a<<" "<<b<<endl;
 		ans=(a+b)/2;
 		if(ans*ans==number) return (int)ans;
 		if(ans*ans>number){
@@ -34,12 +35,18 @@ int search_root(int number){
 }
 
 int main(){
+	/**
+	 * Metodo principal con entrada de datos
+	 */
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
+	//entrada de datos
 	int number; cin>>number;
 
+	//llamado a la funcion 
 	int root=search_root(number);
+
 	if(root==-1){
 		cout<<"No tiene raiz exacta"<<endl;
 	}else{
@@ -48,4 +55,3 @@ int main(){
 
 	return 0;
 }
-
