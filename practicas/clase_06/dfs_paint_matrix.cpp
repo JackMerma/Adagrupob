@@ -17,6 +17,11 @@ int son_fil[4]={-1,1,0,0};
 int son_col[4]={0,0,-1,1};
 
 void print(vector<vector<int>> matrix){
+	/**
+	 * Metodo print: Imprime la tabla (-1 es impreso como #)
+	 * Atributos:
+	 * 	matrix -> vector 2D de los datos
+	 */
 	int len=matrix.size();
 	for(int i=0;i<len;i++){
 		for(int u=0;u<len;u++){
@@ -30,13 +35,23 @@ void print(vector<vector<int>> matrix){
 }
 
 vector<vector<int>> dfs_matrix_painter(vector<vector<int>> matrix, int fil, int col, int color){
+	/**
+	 * Metodo dfs_matrix_painter: hace recorrido dfs por el vector 2D (pinta)
+	 * Atributos:
+	 * 	matrix -> vector 2D de los datos
+	 * 	fil    -> coordenada 'y' de la matriz
+	 * 	col    -> coordenada 'x' de la matriz
+	 * 	color  -> color con el que se pintará la posiciones [fil][col]
+	 */
 	int len=matrix.size();
-	if((fil<0||fil>=len||col<0||col>=len) || matrix[fil][col]==-1 || matrix[fil][col]==color) //se verifica en un inicio
+
+	//verificacion de limites, pintado y pared
+	if((fil<0||fil>=len||col<0||col>=len) || matrix[fil][col]==-1 || matrix[fil][col]==color)
 		return matrix;
-	matrix[fil][col]=color;
-	print(matrix);
-	cout<<endl;
-	//recorrido de los hijos -> son[fil][col]
+	
+	matrix[fil][col]=color;//se pinta
+
+	//recorrido de los 4 posibles hijos
 	for(int i=0;i<4;i++){
 		matrix = dfs_matrix_painter(matrix,fil+son_fil[i],col+son_col[i],color);
 	}
@@ -45,6 +60,9 @@ vector<vector<int>> dfs_matrix_painter(vector<vector<int>> matrix, int fil, int 
 
 
 int main(){
+	/**
+	 * Metodo principal con entrada de datos
+	 */
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
@@ -64,9 +82,9 @@ int main(){
 
 	int x,y;
 	cin>>x>>y;//entrada de puntos a iniciar
-	x--; y--; //valores de 0-n
+	x--; y--; //valores de 1-n
 
-	int color;cin>>color;
+	int color;cin>>color;//entrada del color a usar
 
 	cout<<"Before..."<<endl;
 	print(matrix);
