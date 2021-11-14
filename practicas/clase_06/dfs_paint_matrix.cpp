@@ -26,9 +26,9 @@ void print(vector<vector<int>> matrix){
 	for(int i=0;i<len;i++){
 		for(int u=0;u<len;u++){
 			if(matrix[i][u]==-1)
-				cout<<"#"<<" ";
+				cout<<"#"<<"\t";
 			else
-				cout<<matrix[i][u]<<" ";
+				cout<<matrix[i][u]<<"\t";
 		}
 		cout<<endl;
 	}
