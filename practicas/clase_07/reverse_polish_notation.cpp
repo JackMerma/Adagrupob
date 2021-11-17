@@ -2,7 +2,7 @@
 * @author      : Jackson Fernando Merma Portocarrero (jmermap@unsa.edu.pe)
 * @created     : 15/11/2021
 * @filename    : validate
-* @description : _
+* @description : encuentra el resultado de una operacion polaca
 */
 #include <bits/stdc++.h>
 using namespace std;
