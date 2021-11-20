@@ -2,7 +2,7 @@
 * @author      : Jackson Fernando Merma Portocarrero (jmermap@unsa.edu.pe)
 * @created     : 17/11/2021
 * @filename    : backspace
-* @description : dada una cadena, elimina el ultimo caracter de haber un #
+* @description : Dada una cadena, elimina el ultimo caracter de haber un #
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -22,7 +22,7 @@ int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	
-	//lamado a la funcion back_space
+	//llamado a la funcion back_space
 	back_space("abc#de##f#ghi#jklmn#op#");
 	back_space("abcd###");
 	back_space("abcd#e#f#g#");
