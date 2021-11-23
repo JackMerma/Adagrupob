@@ -44,20 +44,15 @@ int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
-	//entrada de datos
-	int cant;cin>>cant;//cantidad de numeros a ingresar
-	int arr[cant];
-
-	for(int i=0;i<cant;i++) cin>>arr[i];//entrada de 'n' numeros
-
-	int num;cin>>num;//numero a buscar
-
-	
+	int arr1[5]={1,2,3,4,5};
+	int arr2[10]={0,4,4,4,5,7,8,10,14,15};
+	int arr3[7]={3,3,4,4,5,5,7};
 	//llamado a la funcion
-	int pos=search(arr,cant,num);
-
-	if(pos==-1) cout<<"No encontrado"<<endl;
-	else cout<<"Encontrado en la posicion: "<<pos+1<<endl;
+	
+	//posicion de 0 a n-1
+	cout<<"resultado "<<search(arr1,5,4)<<endl;
+	cout<<"resultado "<<search(arr2,10,11)<<endl;
+	cout<<"resultado "<<search(arr3,7,1)<<endl;
 
 	return 0;
 }

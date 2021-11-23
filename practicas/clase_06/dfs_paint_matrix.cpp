@@ -66,35 +66,53 @@ int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
-	//entrada de datos
-	int n;cin>>n;//longitud de la matriz
-	vector<vector<int>> matrix;
-	
-	//entrada de n*n datos en la matriz
-	for(int i=0;i<n;i++){
-		vector<int> aux;
-		for(int u=0;u<n;u++){
-			int num;cin>>num;
-			aux.push_back(num);
-		}
-		matrix.push_back(aux);
-	}
+	vector<vector<int>> m1=
+	{	{-1, -1, 0, 0, -1},
+		{0, 0, 0, 0, 0},
+		{-1, -1, -1, -1, -1},
+		{-1, -1, 0, -1, 0},
+		{-1, 0, 0, -1, 0},
+	};
 
-	int x,y;
-	cin>>x>>y;//entrada de puntos a iniciar
-	x--; y--; //valores de 1-n
+	vector<vector<int>> m2=
+	{	{-1, -1, 0, 0, -1, 0, 0, 0, 0, 0},
+		{-1, -1, -1, -1, -1, -1, -1, 0, -1, 0},
+		{-1, 0, 0, -1, 0, 0, -1, 0, 0, -1},
+		{-1, 0, -1, 0, -1, 0, -1, -1, -1, 0},
+		{-1, -1, 0, -1, -1, 0, -1, -1, -1, 0},
+		{-1, 0, 0, -1, -1, -1, -1, -1, -1, 0},
+		{0, -1, 0, 0, 0, 0, 0, 0, 0, 0},
+		{0, -1, 0, -1, 0, 0, 0, -1, -1, 0},
+		{-1, -1, 0, 0, 0, 0, 0, 0, -1, 0},
+		{0, -1, 0, -1, -1, 0, 0, 0, -1, -1},
+	};
+	vector<vector<int>> m3=
+	{	{-1, -1, 0, 0},
+		{-1, 0, 0, 0},
+		{0, 0, -1, -1},
+		{-1, -1, -1, -1},
+	};
 
-	int color;cin>>color;//entrada del color a usar
+	//caso 1
+	cout<<"Matriz 1:"<<endl;
+	print(m1);
+	m1=dfs_matrix_painter(m1,1,0,3);
+	cout<<"luego ..."<<endl;
+	print(m1);
 
-	cout<<"Before..."<<endl;
-	print(matrix);
+	//caso2
+	cout<<"Matriz 2:"<<endl;
+	print(m2);
+	m2=dfs_matrix_painter(m2,6,2,7);
+	cout<<"luego ..."<<endl;
+	print(m2);
 
-	//llamado a la funcion
-	matrix = dfs_matrix_painter(matrix,x,y,color);
-
-
-	cout<<"After..."<<endl;
-	print(matrix);
+	//caso 3
+	cout<<"Matriz 3:"<<endl;
+	print(m3);
+	m3=dfs_matrix_painter(m3,0,3,9);
+	cout<<"luego ..."<<endl;
+	print(m3);
 
 	return 0;
 }

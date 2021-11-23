@@ -34,7 +34,6 @@ int search_equal_or_next(int *arr,int len,int found){
 			a=middle+1;
 		}
 	}
-	cout<<"dont"<<endl;
 	//la posicion acta
 	if(found>arr[len-1]) return -1;//no existe
 	return arr[middle+1];//posicion siguiente
@@ -49,23 +48,13 @@ int main(){
 	cin.tie(0);
 
 
-	//entrada de datos
-	int cant;cin>>cant;//cantidad de numeros a ingresar
-	int numbers[cant];
+	int arr1[5]={1,2,3,4,5};
+	int arr2[11]={0,4,4,4,5,7,8,10,14,15,17};
+	int arr3[7]={3,3,4,4,5,5,7};
 
-	for(int i=0;i<cant;i++) cin>>numbers[i];//ingreso de 'n' datos
-
-	//numero a encontrar o mayor a este
-	int found;cin>>found;
-
-
-	//llamado a la funcion
-	int number_searching=search_equal_or_next(numbers,cant,found);
-
-	if(number_searching==-1)
-		cout<<"No hay mayor o igual que "<<found<<endl;
-	else
-		cout<<"Mayor o igual que "<<found<<": "<<number_searching<<endl;
+	cout<<search_equal_or_next(arr1,5,3)<<endl;
+	cout<<search_equal_or_next(arr2,11,13)<<endl;
+	cout<<search_equal_or_next(arr3,7,100)<<endl;
 
 	return 0;
 }

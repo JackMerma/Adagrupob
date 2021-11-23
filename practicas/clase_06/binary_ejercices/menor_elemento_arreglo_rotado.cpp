@@ -40,17 +40,13 @@ int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
+	int arr1[5]={1,2,3,4,5};
+	int arr2[10]={7,8,9,10,2,3,4,5,6,6};
+	int arr3[7]={9,0,2,3,4,5,6};
 
-	//entrada de datos
-	int cant;cin>>cant;//cantidad de datos
-	int arr[cant];
-
-	for(int i=0;i<cant;i++) cin>>arr[i];//entrada de 'n' datos
-
-
-	//llamado a la funcion
-	int minElemento=searchRotatedArr(arr,cant);
-	cout<<"Minimo encontrado:"<<minElemento<<endl;
+	cout<<searchRotatedArr(arr1,5)<<endl;
+	cout<<searchRotatedArr(arr2,10)<<endl;
+	cout<<searchRotatedArr(arr3,7)<<endl;
 
 	return 0;
 }

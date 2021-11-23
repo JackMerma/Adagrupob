@@ -41,17 +41,12 @@ int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
-	//entrada de datos
-	int number; cin>>number;
+	
+	cout<<search_root(100)<<endl;
+	cout<<search_root(12)<<endl;
+	cout<<search_root(121)<<endl;
+	cout<<search_root(82)<<endl;
 
-	//llamado a la funcion 
-	int root=search_root(number);
-
-	if(root==-1){
-		cout<<"No tiene raiz exacta"<<endl;
-	}else{
-		cout<<"Raiz de "<<number<<": "<<root<<endl;
-	}
 
 	return 0;
 }
