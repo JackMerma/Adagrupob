@@ -10,6 +10,20 @@ using namespace std;
 #define endl "\n"
 #define PI 3.1415926535897932384626
 
+/**
+ * Explanation: 
+ * 		Primero, e ordenan las opciones que hay priorizando el dinero
+ * 		y luego el tiempo que toman, de mayor a menor; luego, como ya
+ * 		se tiene un orden maximizado, simplemente si en la posicion maxima
+ * 		que puede esperar (tiempo), esta vacío, simplemente se inserta, 
+ * 		si no es asi, entonces se debe buscar una posicion o tiempo vacío
+ * 		desde su limite de tiempo hasta 0, finalmente, si ya no hay mas cupos
+ * 		o espacios para llenar, simplemente la suma de todo ello (dinero),
+ * 		sobre el tiempo que se peude atender, es la respuesta maxima de ganancia.
+*/
+
+
+
 int best_comparation(pair<int,int> a, pair<int,int> b){
 	/* 
 		Metodo best_comparation:

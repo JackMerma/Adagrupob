@@ -2,7 +2,25 @@
 * @author      : Jackson Fernando Merma Portocarrero (jmermap@unsa.edu.pe)
 * @filename    : maxNoneoverlappingSegments
 */
+
+/**
+ * Explanation:
+ *      Para tener la longitud maxima de rectas NO superpuestas, 
+ *      simplemente, se debe cumplir que el limite derecho de la anterior
+ *      no deba estar dentro del limite de la actual (limite izquierdo de
+ *      la actual), entonces, como estan ordenadas por su limite derecho,
+ *      simplemente se debe tomar a 1 limite de referencia que cumpla las
+ *      condiciones (1 solucion extrema).
+*/
+
 int solution(vector<int> &A, vector<int> &B) {
+    /**
+     * Metodo solution: proporcionado por el sitio web
+     * Atributos: 
+     *      A -> lista de posiciones izquierdas de rectas
+     *      B -> lista de posiciones derechas de rectas 
+     */ 
+    
     if(A.size()==0)//si no hay datos
         return 0;
 

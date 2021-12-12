@@ -11,7 +11,20 @@ using namespace std;
 #define endl "\n"
 #define PI 3.1415926535897932384626
 
+/**
+ * Explanation: 
+ * 		Simplemente se crean los tiempos tomados para los 
+ * 		n problemas, luego se hace un sort de menor a mayor
+ * 		y finalmente se escogen solamente los que se pueden tomar
+ * 		o los que se deben tomar. Con ello, se suma todo el tiempo
+ * 		tomado % 1 000 000 007 durante las pasadas.
+ */
+
+
 int main(){
+	/**
+	 * Metodo principal
+	*/
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
