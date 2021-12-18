@@ -7,45 +7,58 @@ using namespace std;
 #define PI 3.1415926535897932384626
 #define INF 0x3f
 
-const int maxN=1e5;
+const int maxN=1e5;//maximo tamaño
 int n, m;
-vector<array<ll, 2>> grafo[maxN];
-ll dist[maxN];
+vector<array<ll, 2>> grafo[maxN];//representacion de grafo con un array
+ll dist[maxN];//distancias minimas
 
 int main(){
+	/**
+	 * 	Metodo principal
+	 */
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 
 	int n, m;
-	cin>>n>>m;
+	cin>>n>>m; //entrada de datos para n y m
 
 
+	memset(dist, INF, sizeof(dist));//inicializando arreglo de distancias minimas
+
+	//entrada de datos para las aristas
 	for(int i=0;i<m;i++){
 		int a, b, value;
-		cin>>a>>b>>value;
+		cin>>a>>b>>value;// nodo A, nodo B y valor de la arista
 
-		grafo[a-1].push_back({value, b-1});
+		grafo[a-1].push_back({value, b-1});//agrega un par en la lista [a-1]
 	}
 
-	memset(dist, INF, sizeof(dist));
-	dist[0]=0;
+	dist[0]=0;//la primera distancia es 0
 
+	//priority queue mediante menores pesos de aristas
 	priority_queue<array<ll, 2>, vector<array<ll, 2>>, greater<array<ll, 2>>> pq;
-	pq.push({0,0});
+	pq.push({0,0});//empieza por el primer nodo {peso 0, nodo 0}
 
-	while(!pq.empty()){
-		array<ll, 2> actual = pq.top();
+	while(!pq.empty()){//siempre que haya datos en el pq
+		array<ll, 2> actual = pq.top();//el con mas prioridad
 		pq.pop();
 
-		if(actual[0]<=dist[actual[1]]){
+		if(actual[0]==dist[actual[1]]){//para menejar INF 
+
+			//se recorren todos sus hijos (como BFS)
 			for(array<ll,2> list : grafo[actual[1]]){
+
+				//si la opcion de la suma es max optima que la que ya estaba
 				if(dist[list[1]]>actual[0]+list[0]){
-					dist[list[1]]=actual[0]+list[0];
-					pq.push({dist[list[1]], list[1]});
+					dist[list[1]]=actual[0]+list[0];//se actualiza la distancia
+					pq.push({dist[list[1]], list[1]});//se coloca en el pq dicho nodo a procesar
 				}
 			}
+
 		}
 	}
+
+	//imprimiendo todas las distancias minimas
 	for(int i=0;i<n;i++)
 		cout<<dist[i]<<" ";
 	cout<<endl;
