@@ -7,6 +7,21 @@ using namespace std;
 #define PI 3.1415926535897932384626
 #define INF 0x3f
 
+/**
+
+Solucion:
+
+En este problema, se usa un algoritmo hamiltoniano de fuerza bruta, entonces basicamente se hallan
+todas las posibles combinaciones de inicio de recorrido; para ello:
+
+	+ Se trabaja con una matriz de adyacencia, donde se introducen los pesos
+	+ Luego, se recorren todos los inicios posibles (N posiciones) -> primer bucle (nodo fijo)
+	+ Se recorre dentro la matriz N x N, donde se busca optimizar al grafo (matriz de adyacencia)
+	  (primer y segundo bucle)
+	+ Finalmente, en cada una de las posiciones, estara el peso minimo para ir de A a B.
+
+*/
+
 const int maxN=500;//maxima cantidad
 int n, m, q;
 ll grafo[maxN][maxN];//grafo principal
