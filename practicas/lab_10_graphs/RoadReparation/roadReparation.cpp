@@ -6,6 +6,33 @@ using namespace std;
 #define endl "\n"
 #define PI 3.1415926535897932384626
 
+/**
+
+Solucion:
+
+En este problema, se implementa el algoritmo de Kruskal, donde basicamente se buscan los menores
+pesos en aristas y se van añadiendo los nodos al arbol de expansion minima.
+
+Entonces, primero, se insertan aristas a un vector, y se ordenan por menor coste de arista.
+
+Luego, se debe tomar en cuenta que es posible formarse bucles si se añaden las aristas minimas,
+es por ello que cada nodo pertenecera a un grupo determinado, donde este tendra el identificador
+del padre unico; entonces:
+
+	+ Si A esta conectado con B, el padre de A, sera B, y el padre de B será el mismo (B).
+	+ Sin embargo para los grupos de mas de 2 integrantes, será perjudicial buscar al padre principal
+	  preguntando por el padre del padre, es por ello que los que vayan pasando por esa consulta,
+	  se actualizaran con el padre principal, entonces:
+	  	
+		+	Si A esta conectado con B, el padre de A es B, luego, si C esta conectado con A,
+			entonces, el padre de C, es A pero este guardo a B, entonces el padre de C es B
+	+ Luego, si A no es parte del grupo de B, entonces, pueden crear una relacion y se aumenta el coste
+
+Finalmente, el coste sera esa suma, y si las relaciones llegan a N-1, entonces se sabra que se pudo
+recorrer a todos los nodos
+
+*/
+
 vector<int> path(1e5+1, -1);// path o grupos formados
 
 struct arista{
