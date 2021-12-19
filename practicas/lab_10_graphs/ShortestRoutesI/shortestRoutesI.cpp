@@ -7,6 +7,22 @@ using namespace std;
 #define PI 3.1415926535897932384626
 #define INF 0x3f
 
+/**
+
+Solucion:
+
+En este problema, basicamente se hace un recorrido BFS, por los nodos, (Dijkstra) pero con menos coste
+usando un priorityQueue, entones:
+
+	+ Primero, se insertan los datos en una matriz enlazada que tiene almacena dos datos por cada
+	  una de ella (coste y nodo de llegada).
+	+ Luego, se desarrolla el algoritmo, donde se busca optimizar el el coste entre A y Z, 
+	  suponiendo que entre ambos pudo haberse tomado otras opciones
+
+	+ Finalmente se recorre el arreglo dist que guarda los costes minimos hacia cada nodo 
+
+*/
+
 const int maxN=1e5;//maximo tamaño
 int n, m;
 vector<array<ll, 2>> grafo[maxN];//representacion de grafo con un array
