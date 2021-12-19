@@ -7,6 +7,25 @@ using namespace std;
 #define PI 3.1415926535897932384626
 #define INF 0x3f
 
+/**
+
+Solucion:
+
+Para la solucion de este problema, se usa la implemetacion del problema Shortest Routes I, donde
+se usa un priorityQueue para determinar el minimo coste entre nodos. Luego se usan dos grafos y 
+dos salidas de coste minimo (distancias 1 y 2), esto para poder maximizar la suma al final
+
+Entonces, el grafo 1 (principal), cumple con la entrada de aristas (desde el nodo A al nodo B), 
+sin embargo, el grafo 2, cumple con la entrada pero adyacente (desde el nodo B al nodo A); esto
+se hace para poder procesar los costes de ida y vuelta.
+
+Finalmente, para poder maximizar el coste, se busca la menor suma entre:
+	+ coste actual o principal (dist1[x])
+	+ coste en dist2[y], recorriendo todo el grafo principal
+	+ coste recorriendo el grafo principal
+
+*/
+
 const int maxN=1e5;//maximo tamaño
 int n, m;
 vector<array<ll, 2>> grafo1[maxN], grafo2[maxN];//representacion de grafo con un array
