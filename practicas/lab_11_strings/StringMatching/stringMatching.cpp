@@ -12,29 +12,21 @@ int main(){
 	cin.tie(0);
 	
 	string str1,str2;
-    int conteo[100000];
+    vector<int> matchPositions(1000000);
 
     while(getline(cin,str1), getline(cin, str2)){
-        int pos=0,x=0;
+        int pos=0,conteo=0;
 
-        while(str2.find(str1,x)!=-1&&x<str2.size()){
+        while(str2.find(str1,conteo)!=-1 && conteo<str2.size()){
 
-            conteo[pos++]=str2.find(str1,x);
-            x=conteo[pos-1]+1;
+            matchPositions[pos++]=str2.find(str1,conteo);
+            conteo=matchPositions[pos-1]+1;
         }
 
-        for(int i=0;i<pos;i++){
-        	cout<<conteo[i];
-        	if(i==pos-1){
-        		cout<<endl;
-        	}else{
-        		cout<<" ";
-        	}
-        }
-    }
-
-    for(int i=0;i<str2.length();i++){
-    	cout<<conteo[i]<<" ";
+        for(int i=0;i<pos;i++)
+        	cout<<matchPositions[i]<<" ";
+        
+        cout<<endl;
     }
 
 	return 0;
