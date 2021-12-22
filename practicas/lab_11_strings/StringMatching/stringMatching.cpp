@@ -1,3 +1,10 @@
+/**
+
+Author: Jackson Fernando Merma Portocarrero
+Problema: String Matching
+ 
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

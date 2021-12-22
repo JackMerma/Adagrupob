@@ -13,6 +13,25 @@ using namespace std;
 #define PI 3.1415926535897932384626
 
 
+/*
+Explicacion:
+
+Para su solucion, solamente se usara un sort que pueda ordenar las palabras
+en el orden deseado.
+
+1. Primero se encuentra la logitud de la palabra mas larga de un subgrupo
+2. Segundo, se hace un reverse a todas las palabras del subgrupo
+3. Se hace el sort (ordenara alfabeticamente)
+4. Se hace un reverse de nuevo, para que las palabras vuelvan a su 
+   estado normal.
+5. Se rellenan las palabras al inicio con espacios vacios, para ellos
+   se usa la funcion str.resize(), donde se especificara la cantidad de 
+   espacios vacios en cada palabra, este numero sera la longitud maxima
+   hallada en el paso 1 menos la longitud de la palabra actual.
+6. Finalmente se imprime el subgrupo
+
+*/
+
 string str;
 
 void process(vector<string> palabras){
