@@ -7,6 +7,23 @@ using namespace std;
 #define endl "\n"
 #define PI 3.1415926535897932384626
 
+/*
+
+Explicacion:
+
+Para resolverlo, simplemente se buscara las coincidencia de la palabra 1
+en la palabra 2; para ello, se manejara un vector donde se almacenen
+estas coincidencias si las hay.
+
+Entonces, si encuentra una coincidencia, la almacena y luego se buscara
+desde la posicion donde se encontro la ultima vez + 1. (para esto se 
+hace uso de la funcion str.find())
+
+Finalmente, se imprimira las coincidencias encontradas y almacenadas
+en el arreglo auxiliar.
+
+*/
+
 int main(){
     /*
     Metodo main: principal
